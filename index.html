@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>COTE | Coffee On the Table · Roasting Café in Cheomdan, Gwangju · 코테</title>
+<meta name="description" content="COTE, Coffee On the Table. A roasting café in Cheomdan, Gwangju. Beans roasted in-house every day, brunch and handmade desserts, and a garden space open for private hire. 광주 첨단 로스팅 카페 코테." />
+<link rel="canonical" href="https://cote-sample.lgt3232.workers.dev/" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:site_name" content="COTE 코테" />
+<meta property="og:title" content="COTE · Coffee On the Table" />
+<meta property="og:description" content="Roasting café in Cheomdan, Gwangju. 광주 첨단 로스팅 카페 코테." />
+<meta property="og:url" content="https://cote-sample.lgt3232.workers.dev/" />
+<meta property="og:image" content="https://cote-sample.lgt3232.workers.dev/og-cote.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#EDEDEB" />
+<link rel="icon" href="favicon.png" type="image/png" />
+<link rel="preload" href="ct-urbanist.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="ct-pretendard.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="ct-hero.webp" as="image" />
+<link rel="preload" href="ct-logo.webp" as="image" />
+<!-- 시안 도메인 = cote-sample.lgt3232.workers.dev. 고객 인계 시 grep lgt3232 → canonical·og:url·og:image·JSON-LD url/image 치환 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "COTE 코테",
+  "alternateName": "Coffee On the Table",
+  "url": "https://cote-sample.lgt3232.workers.dev/",
+  "image": "https://cote-sample.lgt3232.workers.dev/og-cote.jpg",
+  "email": "cote@cotecoffee.kr",
+  "servesCuisine": "Coffee, Brunch, Dessert",
+  "address": { "@type": "PostalAddress", "streetAddress": "첨단월봉로 50", "addressLocality": "광산구", "addressRegion": "광주광역시", "addressCountry": "KR" },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "08:00", "closes": "21:30" }
+  ],
+  "sameAs": ["https://www.instagram.com/cote.here/"]
+}
+</script>
+<style>
+@font-face{ font-family:"CT Sans"; font-weight:300 700; font-display:swap; src:url("ct-urbanist.woff2") format("woff2"); }
+@font-face{ font-family:"CT Ko"; font-weight:400 600; font-display:swap; src:url("ct-pretendard.woff2") format("woff2"); }
+
+:root{
+  --paper:#EDEDEB;       /* 콘크리트 · 유리 건물의 중성 회색 */
+  --white:#F7F7F6;
+  --ink:#161616;         /* 15.4:1 */
+  --soft:#5E5E5C;        /* 5.5:1 */
+  --line:#D2D2CF;
+  --green:#1E6E5A;       /* 외관 간판 녹색(71,183,155)을 글자용으로 어둡게 · 5.2:1 */
+  --sans:"CT Sans","CT Ko",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --ko:"CT Ko",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --wrap:1200px;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.7; }
+[lang="ko"]{ word-break:keep-all; }
+img{ max-width:100%; height:auto; display:block; }
+a{ color:inherit; text-decoration:none; }
+h1,h2,h3,p{ margin:0; }
+button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; }
+:focus-visible{ outline:1.5px solid var(--green); outline-offset:3px; }
+.wrap{ width:min(100% - 40px, var(--wrap)); margin:0 auto; }
+.sec{ padding:100px 0; }
+@media (min-width:900px){ .sec{ padding:150px 0; } }
+.ko{ font-family:var(--ko); font-size:.86rem; color:var(--soft); }
+
+.no{ font-size:.82rem; font-weight:600; letter-spacing:.16em; color:var(--green); }
+.h2{ margin-top:14px; font-weight:500; font-size:clamp(2.1rem,5.4vw,3.6rem); line-height:1.08; letter-spacing:-.02em; text-wrap:balance; }
+.lead{ margin-top:20px; max-width:30em; font-size:1.08rem; color:var(--soft); }
+.lead + .ko{ display:block; margin-top:10px; max-width:36em; }
+.head{ display:grid; gap:4px; margin-bottom:52px; }
+@media (min-width:900px){ .head{ grid-template-columns:5fr 6fr; gap:64px; align-items:end; margin-bottom:68px; } .head .right .lead{ margin-top:0; } }
+
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:50px; padding:0 24px; border:1px solid var(--ink); border-radius:2px; font-size:.95rem; font-weight:500; transition:background .2s ease, color .2s ease, transform .15s ease; }
+.btn.fill{ background:var(--ink); color:var(--white); }
+.btn:active{ transform:scale(.98); }
+@media (hover:hover){ .btn:not(.fill):hover{ background:var(--ink); color:var(--white); } .btn.fill:hover{ background:#000; } }
+
+/* 헤더 */
+.site-head{ position:sticky; top:0; z-index:50; background:rgba(237,237,235,.95); border-bottom:1px solid var(--line); }
+.site-head .wrap{ display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:64px; }
+.brand{ display:flex; align-items:center; gap:12px; font-weight:600; letter-spacing:.24em; font-size:1rem; }
+.brand img{ width:38px; }
+.nav{ display:none; gap:30px; font-size:.94rem; }
+@media (min-width:900px){ .nav{ display:flex; } }
+@media (hover:hover){ .nav a:hover{ color:var(--green); } }
+.head-cta{ min-height:40px; padding:0 18px; font-size:.86rem; }
+@media (max-width:899px){ .head-cta{ display:none; } }
+
+/* 히어로 */
+.hero{ padding:56px 0 0; text-align:center; }
+@media (min-width:900px){ .hero{ padding:96px 0 0; } }
+.hero .ring{ width:min(52vw, 260px); margin:0 auto; }
+.hero h1{ margin-top:40px; font-weight:500; font-size:clamp(2.4rem,7vw,5rem); line-height:1.02; letter-spacing:-.03em; }
+.hero h1 span{ color:var(--soft); font-weight:300; }
+.hero .sub{ margin-top:18px; font-size:1.05rem; color:var(--soft); }
+.hero .ko{ display:block; margin-top:6px; }
+.hero .cta{ display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:30px; }
+.hero figure{ margin:64px 0 0; }
+@media (min-width:900px){ .hero figure{ margin-top:96px; } }
+.hero figure img{ width:100%; aspect-ratio:3/2; object-fit:cover; }
+@media (min-width:900px){ .hero figure img{ aspect-ratio:21/9; } }
+
+/* 소개 인용 */
+.about{ text-align:center; }
+.about blockquote{ margin:0 auto; max-width:24em; font-size:clamp(1.45rem,3.2vw,2.2rem); line-height:1.4; letter-spacing:-.01em; font-weight:400; }
+.about .ko{ display:block; margin:24px auto 0; max-width:30em; font-size:.92rem; line-height:1.8; }
+
+/* 01 로스팅 */
+.roast .wrap{ display:grid; gap:44px; }
+@media (min-width:900px){ .roast .wrap{ grid-template-columns:6fr 5fr; gap:88px; align-items:center; } }
+.roast figure{ margin:0; }
+.roast img{ width:100%; aspect-ratio:9/8; object-fit:cover; }
+.bean-note{ margin-top:30px; display:inline-flex; gap:12px; align-items:baseline; padding:14px 18px; border:1px solid var(--line); border-radius:2px; font-size:.92rem; background:var(--white); }
+.bean-note b{ font-weight:600; }
+
+/* 02 메뉴 */
+.menu{ display:grid; grid-template-columns:1fr 1fr; gap:32px 14px; }
+@media (min-width:900px){ .menu{ grid-template-columns:repeat(3,1fr); gap:44px 24px; } }
+.item{ margin:0; }
+.item img{ width:100%; aspect-ratio:1; object-fit:cover; border-radius:2px; }
+.item figcaption{ margin-top:14px; }
+.item b{ display:block; font-weight:600; font-size:1.08rem; }
+.item span{ display:block; margin-top:2px; font-size:.9rem; color:var(--soft); }
+.item .ko{ display:block; margin-top:2px; }
+.bakery{ margin-top:72px; display:grid; gap:20px; }
+@media (min-width:900px){ .bakery{ grid-template-columns:7fr 4fr; gap:24px; align-items:stretch; } }
+.bakery figure{ margin:0; }
+.bakery img{ width:100%; height:100%; aspect-ratio:4/5; object-fit:cover; border-radius:2px; }
+@media (min-width:900px){ .bakery .w img{ aspect-ratio:auto; } }
+.brunch-note{ margin-top:28px; padding-top:20px; border-top:1px solid var(--line); color:var(--soft); font-size:.95rem; }
+.brunch-note b{ color:var(--ink); font-weight:600; }
+
+/* 03 공간 */
+.space{ background:var(--white); }
+.space-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.space-grid figure{ margin:0; }
+.space-grid img{ width:100%; height:100%; object-fit:cover; }
+.space-grid .a{ grid-column:1 / -1; aspect-ratio:3/2; }
+.space-grid .b, .space-grid .c{ aspect-ratio:3/4; }
+.space-grid .d{ grid-column:1 / -1; aspect-ratio:4/5; }
+@media (min-width:900px){
+  .space-grid{ grid-template-columns:repeat(12,1fr); grid-auto-rows:110px; gap:24px; }
+  .space-grid .a{ grid-column:1 / 9; grid-row:span 5; aspect-ratio:auto; }
+  .space-grid .b{ grid-column:9 / 13; grid-row:span 5; aspect-ratio:auto; }
+  .space-grid .c{ grid-column:1 / 5; grid-row:span 5; aspect-ratio:auto; }
+  .space-grid .d{ grid-column:5 / 13; grid-row:span 5; aspect-ratio:auto; }
+}
+.space-grid figcaption{ position:static; }
+
+/* 04 모임 · 대관 */
+.gather-grid{ display:grid; gap:20px; }
+@media (min-width:900px){ .gather-grid{ grid-template-columns:1fr 1fr; gap:24px; } }
+.gather-grid figure{ margin:0; }
+.gather-grid img{ width:100%; aspect-ratio:8/7; object-fit:cover; border-radius:2px; }
+.gather-grid figcaption{ margin-top:12px; font-weight:600; }
+.gather-grid figcaption span{ display:block; font-weight:400; font-size:.9rem; color:var(--soft); }
+.hire{ margin-top:72px; display:grid; gap:28px; padding:36px 28px; background:var(--white); border-radius:2px; }
+@media (min-width:900px){ .hire{ grid-template-columns:6fr 5fr; gap:56px; padding:48px 52px; align-items:center; } }
+.hire h3{ font-weight:500; font-size:clamp(1.6rem,3vw,2.2rem); line-height:1.15; letter-spacing:-.02em; }
+.hire p{ margin-top:12px; color:var(--soft); }
+.hire .ko{ display:block; margin-top:8px; }
+.hire .acts{ display:grid; gap:10px; }
+.hire .acts .btn{ width:100%; }
+.copy-btn small{ font-size:.82rem; opacity:.75; }
+.copied{ display:block; min-height:1.4em; text-align:center; font-size:.86rem; color:var(--green); }
+
+/* 05 오시는 길 */
+.visit .wrap{ display:grid; gap:48px; }
+@media (min-width:900px){ .visit .wrap{ grid-template-columns:5fr 6fr; gap:72px; align-items:start; } }
+.route{ margin:30px 0 0; padding:0; list-style:none; counter-reset:r; }
+.route li{ position:relative; padding:14px 0 14px 40px; border-top:1px solid var(--line); counter-increment:r; }
+.route li::before{ content:counter(r); position:absolute; left:0; top:13px; width:26px; height:26px; border:1px solid var(--green); border-radius:50%; display:grid; place-items:center; font-size:.8rem; color:var(--green); }
+.route li .ko{ display:block; margin-top:2px; }
+.info{ margin:28px 0 0; }
+.info div{ display:grid; grid-template-columns:92px 1fr; gap:12px; padding:14px 0; border-top:1px solid var(--line); }
+.info div:last-child{ border-bottom:1px solid var(--line); }
+.info dt{ font-size:.82rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--green); padding-top:3px; }
+.info dd{ margin:0; }
+.info dd .ko{ display:block; margin-top:2px; }
+.visit .cta{ margin-top:26px; display:flex; flex-wrap:wrap; gap:10px; }
+.visit-right{ display:grid; gap:14px; }
+.map{ width:100%; aspect-ratio:4/3; border:0; border-radius:2px; background:var(--white); filter:grayscale(.6); }
+.visit-right img{ width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:2px; }
+
+/* 푸터 */
+.foot{ background:var(--ink); color:#E6E6E4; text-align:center; padding:64px 0 calc(110px + env(safe-area-inset-bottom)); font-size:.88rem; }
+@media (min-width:900px){ .foot{ padding:76px 0; } }
+.foot img{ width:96px; margin:0 auto 22px; }
+.foot p + p{ margin-top:6px; }
+.foot .muted{ color:#A6A6A3; }
+.foot a{ text-decoration:underline; text-underline-offset:3px; }
+
+/* 모바일 하단 바 (불투명) */
+.quick{ position:fixed; left:0; right:0; bottom:0; z-index:60; display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:6px; padding:8px 10px calc(8px + env(safe-area-inset-bottom)); background:var(--paper); border-top:1px solid var(--line); }
+.quick a, .quick button{ display:flex; align-items:center; justify-content:center; min-height:48px; border:1px solid var(--ink); border-radius:2px; font-size:.88rem; font-weight:500; background:var(--paper); }
+.quick .fill{ background:var(--ink); color:var(--white); }
+@media (min-width:900px){ .quick{ display:none; } }
+.toast{ position:fixed; left:50%; bottom:calc(84px + env(safe-area-inset-bottom)); transform:translateX(-50%); z-index:70; padding:10px 18px; border-radius:2px; background:var(--ink); color:var(--white); font-size:.88rem; opacity:0; pointer-events:none; transition:opacity .25s ease; }
+.toast.on{ opacity:1; }
+@media (min-width:900px){ .toast{ bottom:32px; } }
+
+/* 리빌: 사진 로드 후 페이드 (setInterval) */
+.js .reveal{ opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease; }
+.js .reveal.in{ opacity:1; transform:none; }
+@media print{ .js .reveal{ opacity:1; transform:none; } }
+</style>
+<noscript><style>.reveal{ opacity:1 !important; transform:none !important; }</style></noscript>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="COTE, back to top"><img src="ct-logo.webp" alt="" width="560" height="472" /><span>COTE</span></a>
+    <nav class="nav" aria-label="Menu"><a href="#roast">Coffee</a><a href="#table">On the Table</a><a href="#space">Space</a><a href="#hire">Private Hire</a><a href="#visit">Find us</a></nav>
+    <a class="btn fill head-cta" href="https://map.naver.com/p/entry/place/2037666810" target="_blank" rel="noopener">Directions</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap reveal">
+      <img class="ring" src="ct-logo.webp" alt="COTE logo, the letters C O T E arranged in a circle" width="560" height="472" />
+      <h1>Coffee <span>On the</span> Table</h1>
+      <p class="sub">A roasting café in Cheomdan, Gwangju.</p>
+      <span class="ko" lang="ko">광주 첨단 로스팅 카페 코테</span>
+      <div class="cta">
+        <a class="btn fill" href="https://map.naver.com/p/entry/place/2037666810" target="_blank" rel="noopener">Directions</a>
+        <a class="btn" href="#hire">Private Hire</a>
+      </div>
+    </div>
+    <figure class="reveal"><img src="ct-hero.webp" alt="COTE at dusk, a glass pavilion glowing among garden trees" width="1400" height="933" fetchpriority="high" /></figure>
+  </section>
+
+  <section class="sec about" aria-label="About">
+    <div class="wrap reveal">
+      <blockquote>Cote is a space where people naturally gather around a table, through an everyday food culture centered on coffee.</blockquote>
+      <span class="ko" lang="ko">테이블 위에 놓인 커피 한 잔이 삶의 온전한 휴식이 되기를 바라는 마음으로 문을 열었습니다.</span>
+    </div>
+  </section>
+
+  <section class="sec roast" id="roast" aria-labelledby="roast-h" style="padding-top:0">
+    <div class="wrap">
+      <figure class="reveal"><img src="ct-bean.webp" alt="Iced coffee on a steel counter with a pink bean card" width="900" height="791" loading="lazy" /></figure>
+      <div class="reveal">
+        <p class="no">01</p>
+        <h2 id="roast-h" class="h2">Roasted here, every day</h2>
+        <p class="lead">We roast our beans in-house every day, and keep working to carry each bean's fresh character and clean depth into the cup.</p>
+        <span class="ko" lang="ko">매일 매장에서 직접 원두를 볶습니다.</span>
+        <p class="bean-note"><b>New bean</b><span>Ethiopia Aricha</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="table" aria-labelledby="table-h" style="border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><p class="no">02</p><h2 id="table-h" class="h2">On the Table</h2></div>
+        <div class="right"><p class="lead">Handmade desserts to soften the coffee, and a warm brunch for a slow start to the day.</p><span class="ko" lang="ko">수제 디저트와 따뜻한 브런치</span></div>
+      </div>
+      <div class="menu">
+        <figure class="item reveal"><img src="ct-danish.webp" alt="Danish plate with bread, cheese, soft-boiled egg and jam" width="900" height="680" loading="lazy" /><figcaption><b>Danish Plate</b><span class="ko" lang="ko">데니쉬 플레이트</span></figcaption></figure>
+        <figure class="item reveal"><img src="ct-fig.webp" alt="Open sandwich topped with fresh figs and pecans" width="900" height="742" loading="lazy" /><figcaption><b>Fig Open Sandwich</b><span class="ko" lang="ko">무화과 오픈 샌드위치</span></figcaption></figure>
+        <figure class="item reveal"><img src="ct-csand.webp" alt="Croissant sandwich with ham and greens" width="900" height="608" loading="lazy" /><figcaption><b>Croissant Sand</b><span class="ko" lang="ko">크루아상 샌드</span></figcaption></figure>
+        <figure class="item reveal"><img src="ct-peach.webp" alt="Greek yogurt with sliced peach and jam in a wide bowl" width="900" height="744" loading="lazy" /><figcaption><b>Peach Greek Yogurt</b><span>Season menu</span></figcaption></figure>
+        <figure class="item reveal"><img src="ct-cakes.webp" alt="Two small cakes topped with blueberry and peach" width="900" height="743" loading="lazy" /><figcaption><b>Mini Cakes</b><span>Blueberry &amp; Peach</span></figcaption></figure>
+        <figure class="item reveal"><img src="ct-figcake.webp" alt="Small fig cake on a white plate over red" width="900" height="766" loading="lazy" /><figcaption><b>Fig Mini Cake</b><span>Season menu</span></figcaption></figure>
+      </div>
+      <div class="bakery">
+        <figure class="w reveal"><img src="ct-bakery.webp" alt="Lit wooden shelves full of fresh bakes" width="1100" height="1375" loading="lazy" /></figure>
+        <figure class="reveal"><img src="ct-croissant.webp" alt="A tray of glossy croissants" width="900" height="1935" loading="lazy" /></figure>
+      </div>
+      <p class="brunch-note reveal"><b>Brunch</b> is served from 08:00 to 13:00.</p>
+    </div>
+  </section>
+
+  <section class="sec space" id="space" aria-labelledby="space-h">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><p class="no">03</p><h2 id="space-h" class="h2">The Space</h2></div>
+        <div class="right"><p class="lead">Glass, concrete and a quiet garden. We tuned the air and every detail of the room so your time here feels unhurried.</p><span class="ko" lang="ko">머무시는 시간이 아늑하고 특별할 수 있도록 공간의 결을 맞추었습니다.</span></div>
+      </div>
+      <div class="space-grid">
+        <figure class="a reveal"><img src="ct-garden.webp" alt="Glass pavilion under a wooden pergola, framed by trees" width="1400" height="933" loading="lazy" /></figure>
+        <figure class="b reveal"><img src="ct-terrace.webp" alt="Outdoor terrace tables beneath wooden beams" width="900" height="1200" loading="lazy" /></figure>
+        <figure class="c reveal"><img src="ct-kitchen.webp" alt="Steel counter by tall windows with bamboo outside" width="900" height="1200" loading="lazy" /></figure>
+        <figure class="d reveal"><img src="ct-sign.webp" alt="Green COTE sign on a concrete building" width="900" height="1125" loading="lazy" /></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="hire" aria-labelledby="hire-h">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><p class="no">04</p><h2 id="hire-h" class="h2">Gatherings &amp; Private Hire</h2></div>
+        <div class="right"><p class="lead">Talks, yoga mornings and pop-ups happen around our tables. The space is also open for your own occasion.</p></div>
+      </div>
+      <div class="gather-grid">
+        <figure class="reveal"><img src="ct-talk.webp" alt="Long wooden tables under a paper lantern by tall windows" width="1000" height="855" loading="lazy" /><figcaption>Table Talk<span>Conversations with furniture and design studios</span></figcaption></figure>
+        <figure class="reveal"><img src="ct-popup.webp" alt="Plants and a long table in a sunlit greenhouse room" width="1000" height="875" loading="lazy" /><figcaption>Pop-ups &amp; Workshops<span>Yoga classes, pop-ups and seasonal workshops</span></figcaption></figure>
+      </div>
+      <div class="hire reveal">
+        <div>
+          <h3>Make COTE your table.</h3>
+          <p>Café rental, corporate hire, small gatherings and brand events. Tell us what you are planning.</p>
+          <span class="ko" lang="ko">카페 대관 · 기업 대관 · 소모임 · 브랜드 행사 문의</span>
+        </div>
+        <div class="acts">
+          <a class="btn fill" href="https://ig.me/m/cote.here" target="_blank" rel="noopener">Message us on Instagram</a>
+          <button class="btn copy-btn" type="button" data-copy="cote@cotecoffee.kr">cote@cotecoffee.kr <small>Copy</small></button>
+          <span class="copied" aria-live="polite"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec visit" id="visit" aria-labelledby="visit-h" style="border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="no">05</p>
+        <h2 id="visit-h" class="h2">Find us</h2>
+        <p class="lead">There is construction nearby, so the way in can be confusing. Follow these steps.</p>
+        <ol class="route">
+          <li>Find the entrance of the Jeil Punggyeongchae construction site, then take the road on the inner side.<span class="ko" lang="ko">제일풍경채 공사장 입구 쪽을 확인하신 후, 입구 방면 안쪽 길로 진입해 주세요.</span></li>
+          <li>Keep going straight toward Creze House.<span class="ko" lang="ko">크레즈 하우스 방면으로 조금 더 직진해 주세요.</span></li>
+          <li>Look for the warm lights of COTE.<span class="ko" lang="ko">따뜻한 불빛의 코테 매장을 만나보실 수 있습니다.</span></li>
+        </ol>
+        <dl class="info">
+          <div><dt>Address</dt><dd>50 Cheomdanwolbong-ro, Gwangsan-gu, Gwangju<span class="ko" lang="ko">광주 광산구 첨단월봉로 50</span></dd></div>
+          <div><dt>Hours</dt><dd>Wed–Mon 08:00–21:30 · Last order 21:00<br />Closed on Tuesdays<span class="ko" lang="ko">매주 화요일 정기휴무</span></dd></div>
+          <div><dt>Dogs</dt><dd>Not allowed indoors. The garden and outdoor tables are yours to enjoy.<span class="ko" lang="ko">반려견 실내 동반 불가</span></dd></div>
+          <div><dt>Good to know</dt><dd>Groups welcome · Takeout · Wi-Fi · Waiting area · Separate restrooms</dd></div>
+        </dl>
+        <div class="cta">
+          <a class="btn fill" href="https://map.naver.com/p/entry/place/2037666810" target="_blank" rel="noopener">Naver Map</a>
+          <a class="btn" href="https://www.instagram.com/cote.here/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="visit-right reveal">
+        <iframe class="map" title="Map to COTE" src="https://www.google.com/maps?q=%EA%B4%91%EC%A3%BC%20%EA%B4%91%EC%82%B0%EA%B5%AC%20%EC%B2%A8%EB%8B%A8%EC%9B%94%EB%B4%89%EB%A1%9C%2050&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <img src="ct-logo-w.webp" alt="" width="560" height="472" loading="lazy" />
+    <p>COTE · Coffee On the Table</p>
+    <p class="muted"><span lang="ko">광주 광산구 첨단월봉로 50</span> · <a href="https://www.instagram.com/cote.here/" target="_blank" rel="noopener">@cote.here</a> · cote@cotecoffee.kr</p>
+    <p class="muted">© COTE</p>
+  </div>
+</footer>
+
+<div class="quick" aria-label="Quick links">
+  <a class="fill" href="https://map.naver.com/p/entry/place/2037666810" target="_blank" rel="noopener">Directions</a>
+  <a href="https://ig.me/m/cote.here" target="_blank" rel="noopener">DM</a>
+  <button type="button" data-copy="cote@cotecoffee.kr">Email</button>
+</div>
+<div class="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  /* 메일 주소 복사 */
+  var toast=document.querySelector('.toast'), tt;
+  function say(msg){ toast.textContent=msg; toast.classList.add('on'); clearTimeout(tt); tt=setTimeout(function(){ toast.classList.remove('on'); },1800); }
+  function fallback(text){
+    var ta=document.createElement('textarea'); ta.value=text; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select(); var ok=false; try{ ok=document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); return ok;
+  }
+  [].forEach.call(document.querySelectorAll('[data-copy]'),function(b){
+    b.addEventListener('click',function(){
+      var text=b.getAttribute('data-copy');
+      var done=function(ok){ say(ok?'Email copied · '+text:text); var c=document.querySelector('.copied'); if(c && ok) c.textContent='Copied to clipboard'; };
+      if(navigator.clipboard && window.isSecureContext){ navigator.clipboard.writeText(text).then(function(){ done(true); },function(){ done(fallback(text)); }); }
+      else{ done(fallback(text)); }
+    });
+  });
+  /* 리빌: 사진 로드 후 페이드 + 폰트 준비 후 시작 */
+  function show(el){
+    if(el._wait) return;
+    var imgs=el.tagName==='IMG'?[el]:[].slice.call(el.querySelectorAll('img'));
+    var left=imgs.filter(function(i){ return !i.complete; });
+    if(!left.length){ el.classList.add('in'); return; }
+    el._wait=true; var n=left.length;
+    var fin=function(){ if(--n<=0) el.classList.add('in'); };
+    left.forEach(function(i){
+      if(i.loading==='lazy') i.loading='eager';
+      i.addEventListener('load',fin,{once:true}); i.addEventListener('error',fin,{once:true});
+    });
+    setTimeout(function(){ el.classList.add('in'); },2500);
+  }
+  var pending=[].slice.call(document.querySelectorAll('.reveal'));
+  function tick(){
+    if(!pending.length){ clearInterval(t); return; }
+    if(window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 4){
+      pending.forEach(show); pending=[]; return;
+    }
+    var line=window.innerHeight*0.92;
+    pending=pending.filter(function(el){
+      if(el.getBoundingClientRect().top < line){ show(el); return false; }
+      return true;
+    });
+  }
+  var t, started=false;
+  function start(){ if(started) return; started=true; tick(); t=setInterval(tick,120); }
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(start); }
+  setTimeout(start,1200);
+  /* 앵커 스크롤 */
+  var head=document.querySelector('.site-head');
+  [].forEach.call(document.querySelectorAll('a[href^="#"]'),function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href'); var el=id==='#top'?document.body:document.querySelector(id);
+      if(!el) return; e.preventDefault();
+      var s0=window.pageYOffset, end=id==='#top'?0:el.getBoundingClientRect().top+s0-head.offsetHeight+1;
+      var t0=Date.now(), dur=600;
+      var iv=setInterval(function(){
+        var p=Math.min((Date.now()-t0)/dur,1), e2=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+        window.scrollTo(0,s0+(end-s0)*e2);
+        if(p>=1) clearInterval(iv);
+      },16);
+    });
+  });
+})();
+</script>
+</body>
+</html>
